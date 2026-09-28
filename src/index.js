@@ -3,6 +3,6 @@ import "./styles/styles.css";
 
 // Note: Just a check in console.
 // You can remove everything below this comment.
-import { checkModules } from "./scripts/initial-module";
+import { checkModules } from "./scripts/initial-module.js";
 console.log(`Webpack template made by [AminDanaaa].`);
 checkModules();
