@@ -15,5 +15,17 @@
     "webpack-cli": "^7.2.3",
     "webpack-dev-server": "^6.0.0",
     "webpack-merge": "^6.0.1"
-  }
+  },
+  "name": "planner-app",
+  "version": "1.0.0",
+  "description": "A simple, ready-to-use Webpack 5 starter template for vanilla JavaScript projects.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AminDanaaa/planner-app.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/AminDanaaa/planner-app/issues"
+  },
+  "homepage": "https://github.com/AminDanaaa/planner-app#readme"
 }
