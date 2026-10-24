@@ -37,6 +37,43 @@ body {
 .topbar {
     background-color: var(--palette-dark-gray);
     height: 100px;
+    padding-inline: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar > h1 {
+    user-select: none;
+    color: var(--palette-dark-blue);
+    font-weight: bolder;
+}
+
+.topbar > button {
+    user-select: none;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 14px;
+    color: var(--palette-dark-blue);
+    background-color: transparent;
+    border: 2px solid var(--palette-dark-blue);
+    border-radius: 14px;
+    padding: 8px;
+    padding-inline: 12px;
+    transition-duration: 0.2s;
+}
+
+.topbar > button:hover {
+    color: var(--palette-light-blue);
+    border-color: var(--palette-light-blue);
+    border-radius: 8px;
+    padding-inline: 14px;
+    transition-duration: 0.2s;
+}
+
+.topbar > button:active {
+    background-color: var(--palette-dark-blue);
 }
 
 @media (orientation: landscape) {
@@ -66,5 +103,9 @@ body {
 
     .sidebar {
         visibility: hidden;
+    }
+
+    .topbar > h1 {
+        font-size: 24px;
     }
 }
