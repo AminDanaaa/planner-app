@@ -1,8 +1,8 @@
 // "Side effect Import" of the main CSS to load it on Webpack.
 import "./styles/styles.css";
 
-// Note: Just a check in console.
-// You can remove everything below this comment.
-import { checkModules } from "./scripts/initial-module.js";
-console.log(`Webpack template made by [AminDanaaa].`);
-checkModules();
+// Imports:
+import mainContainer from "./scripts/dom/main-container.js";
+
+// Main:
+mainContainer.init();
