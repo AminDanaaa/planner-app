@@ -16,7 +16,7 @@ body {
     background-color: var(--palette-soft-gray);
     width: 100%;
     min-height: 100vh;
-    height: 2000px;
+    height: fit-content;
 }
 
 .sidebar {
