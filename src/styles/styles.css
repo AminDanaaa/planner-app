@@ -27,8 +27,43 @@ body {
 
 .sidebar {
     background-color: var(--palette-charcoal-black);
-    border-radius: 0 14px 14px 0;
-    box-shadow: 8px 0 16px -8px rgba(0, 0, 0, 0.5);
+    border-radius: 6px 32px 6px 32px;
+    box-shadow: 8px 10px 16px -8px rgba(0, 0, 0, 0.9);
+}
+
+.sidebar > button {
+    user-select: none;
+    width: 60%;
+    height: 40px;
+    margin-block: 14px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    background-color: transparent;
+    border: 1px solid var(--palette-dark-blue);
+    border-radius: 8px;
+    color: var(--palette-dark-blue);
+    font-weight: bold;
+}
+
+.sidebar > button:first-of-type {
+    margin-top: 40px;
+}
+
+.sidebar > button:hover {
+    transition-duration: 0.2s;
+    color: var(--palette-light-blue);
+    border-color: var(--palette-light-blue);
+    border-radius: 8px;
+    padding-inline: 14px;
+}
+
+.sidebar > button:active {
+    background-color: var(--palette-dark-blue);
+}
+
+.sidebar > button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--palette-dark-blue);
 }
 
 .right-container {
@@ -41,8 +76,7 @@ body {
     height: 100px;
     padding-inline: 16px;
     margin-inline: 10px;
-    border-radius: 0 0 14px 14px;
-    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.6);
+    box-shadow: 8px 10px 16px -8px rgba(0, 0, 0, 0.6);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -95,15 +129,28 @@ body {
     }
 
     .sidebar {
-        height: 100vh;
-        min-width: 300px;
+        min-height: 80vh;
+        min-width: 250px;
         position: sticky;
         top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 34px;
+        padding-top: 50px;
+        margin-block: 10px;
+        margin-left: 10px;
+    }
+
+    .logo {
+        width: 50%;
     }
 
     .topbar {
         position: sticky;
         top: 0;
+        border-radius: 12px;
+        margin-top: 10px;
     }
 }
 
@@ -114,16 +161,18 @@ body {
     }
 
     .sidebar {
+        height: 0;
+        width: 0;
         visibility: hidden;
     }
 
     .topbar > h1 {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .topbar {
         margin-inline: 0px;
         transition-duration: 0.2s;
-        height: 80px;
+        height: 60px;
     }
 }
