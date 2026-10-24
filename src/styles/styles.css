@@ -38,6 +38,7 @@ body {
     background-color: var(--palette-dark-gray);
     height: 100px;
     padding-inline: 16px;
+    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.6);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -74,6 +75,11 @@ body {
 
 .topbar > button:active {
     background-color: var(--palette-dark-blue);
+}
+
+.topbar > button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--palette-dark-blue);
 }
 
 @media (orientation: landscape) {
