@@ -6,7 +6,7 @@ const initialize = () => {
     topbarReference.classList.add("topbar");
 
     const header = document.createElement("h1");
-    header.textContent = "YOUR PERSONAL TASK MANAGER!";
+    header.textContent = "PERSONAL TASK MANAGER!";
 
     const addBtn = document.createElement("button");
     addBtn.textContent = "New Task";
