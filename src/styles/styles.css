@@ -27,6 +27,7 @@ body {
 
 .sidebar {
     background-color: var(--palette-charcoal-black);
+    border: 1px solid var(--palette-soft-gray);
     border-radius: 6px 32px 6px 32px;
     box-shadow: 8px 10px 16px -8px rgba(0, 0, 0, 0.9);
 }
@@ -149,6 +150,7 @@ body {
     .topbar {
         position: sticky;
         top: 0;
+        border: 1px solid var(--palette-soft-gray);
         border-radius: 12px;
         margin-top: 10px;
     }
@@ -161,9 +163,10 @@ body {
     }
 
     .sidebar {
+        visibility: hidden;
         height: 0;
         width: 0;
-        visibility: hidden;
+        border: none;
     }
 
     .topbar > h1 {
