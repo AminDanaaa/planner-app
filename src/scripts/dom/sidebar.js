@@ -1,8 +1,12 @@
 // Imports:
 import { logo } from "../../SVG/SVG.js";
 
+
+
 // Constants:
 const sidebarReference = document.createElement("div");
+
+
 
 // Main:
 const renderFunction = () => {
@@ -46,6 +50,8 @@ const pushElement = (element) => {
     sidebarReference.append(element);
     sidebar.innerElements.push(element);
 };
+
+
 
 // Exporting:
 const sidebar = {
