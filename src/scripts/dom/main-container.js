@@ -10,7 +10,7 @@ const initialize = () => {
     const container = document.createElement("div");
     container.classList.add("main-container");
 
-    sidebar.init();
+    sidebar.render();
     container.append(sidebar.ref);
 
     rightContainer.init();

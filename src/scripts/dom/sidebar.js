@@ -5,19 +5,20 @@ import { logo } from "../../SVG/SVG.js";
 const sidebarReference = document.createElement("div");
 
 // Main:
-const initialize = () => {
+const renderFunction = () => {
     sidebarReference.classList.add("sidebar");
-
-    const divLogo = document.createElement("div");
-    divLogo.innerHTML = logo;
-
-    divLogo.classList.add("logo");
-
-    sidebarReference.append(divLogo);
-    createButtons();
+    createLogo();
+    createSidebarButtons();
 };
 
-const createButtons = () => {
+const createLogo = () => {
+    const divLogo = document.createElement("div");
+    divLogo.classList.add("logo");
+    divLogo.innerHTML = logo;
+    pushElement(divLogo);
+};
+
+const createSidebarButtons = () => {
     createBtnAdd();
     createBtnClear();
     createBtnAbout();
@@ -26,27 +27,33 @@ const createButtons = () => {
 const createBtnAdd = () => {
     const addBtn = document.createElement("button");
     addBtn.textContent = "Add New Task";
-    sidebarReference.append(addBtn);
+    pushElement(addBtn);
 };
 
 const createBtnClear = () => {
     const clearBtn = document.createElement("button");
     clearBtn.textContent = "Clear All Tasks";
-    sidebarReference.append(clearBtn);
+    pushElement(clearBtn);
 };
 
 const createBtnAbout = () => {
     const aboutBtn = document.createElement("button");
     aboutBtn.textContent = "About Me!";
-    sidebarReference.append(aboutBtn);
+    pushElement(aboutBtn);
+};
+
+const pushElement = (element) => {
+    sidebarReference.append(element);
+    sidebar.innerElements.push(element);
 };
 
 // Exporting:
 const sidebar = {
-    init() {
-        initialize();
+    render() {
+        renderFunction();
     },
-    ref: sidebarReference
+    ref: sidebarReference,
+    innerElements: [],
 };
 
 export default sidebar;
