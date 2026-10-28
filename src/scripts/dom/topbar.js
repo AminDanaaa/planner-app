@@ -2,7 +2,7 @@
 const renderFunction = () => {
     topbar.ref.classList.add("topbar");
     createHeader("PERSONAL TASK MANAGER");
-    createBtnAdd();
+    createButtons();
 };
 
 const createHeader = (text) => {
@@ -11,10 +11,20 @@ const createHeader = (text) => {
     pushElement(header);
 };
 
-const createBtnAdd = () => {
-    const addBtn = document.createElement("button");
-    addBtn.textContent = "New Task";
-    pushElement(addBtn);
+const createButton = (text) => {
+    const newButton = document.createElement("button");
+    newButton.textContent = text;
+    pushElement(newButton);
+};
+
+const createButtons = () => {
+    const buttonsText = [
+        "New Task"
+    ];
+
+    buttonsText.forEach(text => {
+        createButton(text);
+    });
 };
 
 const pushElement = (element) => {
@@ -30,7 +40,7 @@ const topbar = {
         renderFunction();
     },
     ref: document.createElement("div"),
-    innerElements: [],
+    innerElements: []
 };
 
 export default topbar;

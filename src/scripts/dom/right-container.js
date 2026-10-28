@@ -1,23 +1,29 @@
 // Imports:
 import topbar from "./topbar.js";
 
-// Constants:
-const rightContainerReference = document.createElement("div");
+
 
 // Main:
 const renderFunction = () => {
-    rightContainerReference.classList.add("right-container");
-
+    rightContainer.ref.classList.add("right-container");
     topbar.render();
-    rightContainerReference.append(topbar.ref);
+    pushElement(topbar.ref);
 };
+
+const pushElement = (element) => {
+    rightContainer.ref.append(element);
+    rightContainer.innerElements.push(element);
+};
+
+
 
 // Exporting:
 const rightContainer = {
     render() {
         renderFunction();
     },
-    ref: rightContainerReference
+    ref: document.createElement("div"),
+    innerElements: []
 };
 
 export default rightContainer;
