@@ -5,17 +5,17 @@ import topbar from "./topbar.js";
 const rightContainerReference = document.createElement("div");
 
 // Main:
-const initialize = () => {
+const renderFunction = () => {
     rightContainerReference.classList.add("right-container");
 
-    topbar.init();
+    topbar.render();
     rightContainerReference.append(topbar.ref);
 };
 
 // Exporting:
 const rightContainer = {
-    init() {
-        initialize();
+    render() {
+        renderFunction();
     },
     ref: rightContainerReference
 };

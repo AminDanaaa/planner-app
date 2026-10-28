@@ -6,14 +6,14 @@ import rightContainer from "./right-container.js";
 const body = document.querySelector('body');
 
 // Main:
-const initialize = () => {
+const renderFunction = () => {
     const container = document.createElement("div");
     container.classList.add("main-container");
 
     sidebar.render();
     container.append(sidebar.ref);
 
-    rightContainer.init();
+    rightContainer.render();
     container.append(rightContainer.ref);
 
     body.append(container);
@@ -21,8 +21,8 @@ const initialize = () => {
 
 // Exporting:
 const mainContainer = {
-    init() {
-        initialize();
+    render() {
+        renderFunction();
     }
 };
 

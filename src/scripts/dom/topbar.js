@@ -2,7 +2,7 @@
 const topbarReference = document.createElement("div");
 
 // Main:
-const initialize = () => {
+const renderFunction = () => {
     topbarReference.classList.add("topbar");
 
     const header = document.createElement("h1");
@@ -16,8 +16,8 @@ const initialize = () => {
 
 // Exporting:
 const topbar = {
-    init() {
-        initialize();
+    render() {
+        renderFunction();
     },
     ref: topbarReference
 };

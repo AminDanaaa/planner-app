@@ -5,4 +5,4 @@ import "./styles/styles.css";
 import mainContainer from "./scripts/dom/main-container.js";
 
 // Main:
-mainContainer.init();
+mainContainer.render();
