@@ -1,5 +1,5 @@
 // Imports:
-import SVG from "../../SVG/SVG.js";
+import { logo } from "../../SVG/SVG.js";
 
 // Constants:
 const sidebarReference = document.createElement("div");
@@ -9,7 +9,7 @@ const initialize = () => {
     sidebarReference.classList.add("sidebar");
 
     const divLogo = document.createElement("div");
-    divLogo.innerHTML = SVG.logo;
+    divLogo.innerHTML = logo;
 
     divLogo.classList.add("logo");
 
