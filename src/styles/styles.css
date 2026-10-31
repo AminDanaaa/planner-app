@@ -95,13 +95,13 @@ body {
 .topbar > button {
     user-select: none;
     cursor: pointer;
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 14px;
-    color: var(--palette-dark-blue);
-    background-color: transparent;
-    border: 2px solid var(--palette-dark-blue);
-    border-radius: 14px;
-    padding: 8px;
+    color: var(--palette-light-gray);
+    background-color: var(--palette-soft-gray);
+    border: 1px solid var(--palette-soft-gray);
+    border-radius: 10px;
+    padding: 6px;
     padding-inline: 12px;
     transition-duration: 0.2s;
 }
@@ -116,6 +116,7 @@ body {
 
 .topbar > button:active {
     background-color: var(--palette-dark-blue);
+    color: var(--palette-charcoal-black);
 }
 
 .topbar > button:focus-visible {
@@ -124,21 +125,26 @@ body {
 }
 
 .card-container {
-    min-height: 1800px;
     margin: 10px;
-    border: 1px solid black;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 440px);
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
     gap: 10px;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .card-container > div {
+    transition-duration: 0.5s;
     background-color: var(--palette-medium-gray);
     border: 1px solid var(--palette-soft-gray);
     box-shadow: 8px 10px 16px -8px rgba(0, 0, 0, 0.6);
     min-height: 250px;
     border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.card-container > div:hover {
+    transition-duration: 0.5s;
+    border-color: var(--palette-light-gray);
 }
 
 @media (orientation: landscape) {
