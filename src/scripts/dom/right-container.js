@@ -1,13 +1,20 @@
 // Imports:
 import topbar from "./topbar.js";
+import cardContainer from "./card-container.js";
 
 
 
 // Main:
 const renderFunction = () => {
     rightContainer.ref.classList.add("right-container");
+    renderChildren();
+};
+
+const renderChildren = () => {
     topbar.render();
     pushElement(topbar.ref);
+    cardContainer.render();
+    pushElement(cardContainer.ref);
 };
 
 const pushElement = (element) => {
