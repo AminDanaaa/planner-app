@@ -7,11 +7,15 @@ import rightContainer from "./right-container.js";
 // Main:
 const renderFunction = () => {
     mainContainer.ref.classList.add("main-container");
+    renderChildren();
+    document.querySelector('body').append(mainContainer.ref);
+};
+
+const renderChildren = () => {
     sidebar.render();
     pushElement(sidebar.ref);
     rightContainer.render();
     pushElement(rightContainer.ref);
-    document.querySelector('body').append(mainContainer.ref);
 };
 
 const pushElement = (element) => {
