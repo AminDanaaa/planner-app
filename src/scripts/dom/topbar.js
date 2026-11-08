@@ -1,3 +1,8 @@
+// Imports:
+import modalOverlay from "./modals/overlay.js";
+
+
+
 // Main:
 const renderFunction = () => {
     topbar.ref.classList.add("topbar");
@@ -11,25 +16,32 @@ const createHeader = (text) => {
     pushElement(header);
 };
 
-const createButton = (text) => {
+const createButton = (text, onClickFunction) => {
     const newButton = document.createElement("button");
     newButton.textContent = text;
+    newButton.addEventListener("click", onClickFunction);
+    
     newButton.addEventListener("click", () => {
         newButton.classList.remove("jump");
         void newButton.offsetWidth;
         newButton.classList.add("jump");
     });
+    
     pushElement(newButton);
 };
 
 const createButtons = () => {
     const buttonsText = [
-        "New Task"
+        "New Task",
     ];
 
-    buttonsText.forEach(text => {
-        createButton(text);
-    });
+    const buttonsFunction = [
+        modalOverlay.render,
+    ];
+
+    for (let index = 0; index < buttonsText.length; index++) {
+        createButton(buttonsText[index], buttonsFunction[index]);
+    }
 };
 
 const pushElement = (element) => {
