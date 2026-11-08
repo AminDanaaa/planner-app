@@ -1,7 +1,7 @@
 // Main:
 const renderFunction = () => {
     topbar.ref.classList.add("topbar");
-    createHeader("PERSONAL TASK MANAGER");
+    createHeader("TASK MANAGER");
     createButtons();
 };
 
@@ -14,6 +14,11 @@ const createHeader = (text) => {
 const createButton = (text) => {
     const newButton = document.createElement("button");
     newButton.textContent = text;
+    newButton.addEventListener("click", () => {
+        newButton.classList.remove("jump");
+        void newButton.offsetWidth;
+        newButton.classList.add("jump");
+    });
     pushElement(newButton);
 };
 

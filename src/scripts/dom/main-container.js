@@ -1,6 +1,6 @@
 // Imports:
-import sidebar from "./sidebar.js";
-import rightContainer from "./right-container.js";
+import topbar from "./topbar.js";
+import cardContainer from "./card-container.js";
 
 
 
@@ -12,10 +12,10 @@ const renderFunction = () => {
 };
 
 const renderChildren = () => {
-    sidebar.render();
-    pushElement(sidebar.ref);
-    rightContainer.render();
-    pushElement(rightContainer.ref);
+    topbar.render();
+    pushElement(topbar.ref);
+    cardContainer.render();
+    pushElement(cardContainer.ref);
 };
 
 const pushElement = (element) => {
