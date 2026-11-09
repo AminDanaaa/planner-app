@@ -6,6 +6,8 @@ A simple, fast to-do app for tracking tasks.
 
 ### I've successfully ran the preview on:
 + Desktop / Chrome on Linux
++ Android Phone / Chrome
++ iPhone / Safari
 
 ### More Information:
 This project is made using JavaScript/Html/CSS and Webpack.
@@ -28,5 +30,5 @@ Light Rose Red: #990000
 
 > Hey, If you happen to check this project of mine and tried the preview and found some errors / bugs on the UI or the codes, please let me know :wink:
 
-> **Note:** This project is using the Webpack Template by AminDanaaa
-> `https://github.com/AminDanaaa/webpack-template`
+>> **Note:** This project is using the Webpack Template by AminDanaaa
+>> `https://github.com/AminDanaaa/webpack-template`
