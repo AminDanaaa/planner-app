@@ -1,5 +1,6 @@
 // Imports:
 import modalOverlay from "./modals/overlay.js";
+import modalNewTask from "./modals/new-task.js";
 
 
 
@@ -16,16 +17,23 @@ const createHeader = (text) => {
     pushElement(header);
 };
 
-const createButton = (text, onClickFunction) => {
+const addJumpClass = (button) => {
+    button.addEventListener("click", () => {
+        button.classList.remove("jump");
+        void button.offsetWidth;
+        button.classList.add("jump");
+    });
+};
+
+const createButton = (text, functionObject) => {
     const newButton = document.createElement("button");
     newButton.textContent = text;
-    newButton.addEventListener("click", onClickFunction);
     
     newButton.addEventListener("click", () => {
-        newButton.classList.remove("jump");
-        void newButton.offsetWidth;
-        newButton.classList.add("jump");
+        functionObject.onClick(functionObject.parameters);
     });
+
+    addJumpClass(newButton);
     
     pushElement(newButton);
 };
@@ -36,7 +44,10 @@ const createButtons = () => {
     ];
 
     const buttonsFunction = [
-        modalOverlay.render,
+        {
+            onClick: modalOverlay.render,
+            parameters: modalNewTask.ref
+        },
     ];
 
     for (let index = 0; index < buttonsText.length; index++) {

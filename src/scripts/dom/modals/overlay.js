@@ -1,6 +1,7 @@
 // Main:
-const renderFunction = () => {
+const renderFunction = (box) => {
     modalOverlay.ref.classList.add("modal-overlay-active");
+    pushElement(box);
 };
 
 const initialzie = () => {
@@ -17,8 +18,8 @@ const pushElement = (element) => {
 
 // Exporting:
 const modalOverlay = {
-    render() {
-        renderFunction();
+    render(box) {
+        renderFunction(box);
     },
     ref: document.createElement("div"),
     innerElements: []

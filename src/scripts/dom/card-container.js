@@ -1,9 +1,15 @@
+// Imports:
+import taskHandler from "../core/taskHandler.js";
+
+
+
 // Main:
 const renderFunction = () => {
-    cardContainer.ref.classList.add("card-container");
-    for (let i = 0; i < 5; i++) {
-        pushElement(document.createElement("div"));
-    }
+    cardContainer.innerElements = [];
+    cardContainer.ref.innerHTML = "";
+    taskHandler.cards.forEach(task => {
+        pushElement(task);
+    });
 };
 
 const pushElement = (element) => {
@@ -21,5 +27,7 @@ const cardContainer = {
     ref: document.createElement("div"),
     innerElements: []
 };
+
+cardContainer.ref.classList.add("card-container");
 
 export default cardContainer;

@@ -6,3 +6,7 @@ import mainContainer from "./scripts/dom/main-container.js";
 
 // Main:
 mainContainer.render();
+
+// Dummy Tasks:
+import { createDummyTasks } from "./scripts/dummyCardGenerator.js";
+createDummyTasks();
