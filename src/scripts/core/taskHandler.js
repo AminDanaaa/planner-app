@@ -1,7 +1,8 @@
 // Imports:
 import Task from "./Task.js";
-import card from "../dom/card.js";
+import { renderCard } from "../dom/card.js";
 import cardContainer from "../dom/card-container.js";
+import { loadTasks, saveTasks } from "./storage.js";
 
 
 
@@ -11,10 +12,11 @@ const createNewTask = (title, priority, dueDate, description) => {
     taskHandler.tasks.push(task);
     taskHandler.cards.push(createNewTaskCard(task));
     cardContainer.render();
+    saveTasks(taskHandler.tasks);
 };
 
 const createNewTaskCard = (task) => {
-    return card.create(task);
+    return renderCard(task);
 };
 
 const removeTask = (id) => {
@@ -26,16 +28,31 @@ const removeTask = (id) => {
 
         cardContainer.render();
     }
+    saveTasks(taskHandler.tasks);
+};
+
+const handleLoading = () => {
+    const loadedData = loadTasks();
+
+    if (loadedData.length === 0) {
+        return
+    } else {
+        loadedData.forEach(element => {
+            createNewTask(
+                element.title, element.priority, element.dueDate, element.description
+            );
+        });
+    }
 };
 
 
 
 // Exporting:
-const taskHandler = {
+export const taskHandler = {
     tasks: [],
     cards: [],
     createNewTask,
     removeTask
 };
 
-export default taskHandler;
+handleLoading();

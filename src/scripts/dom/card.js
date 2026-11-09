@@ -1,9 +1,9 @@
 // Imports
-import taskHandler from "../core/taskHandler.js";
+import { taskHandler } from "../core/taskHandler.js";
 
 
 
-const create = (task) => {
+export const renderCard = (task) => {
     const card = document.createElement("div");
     const topDivInner = document.createElement("div");
     const topDiv = document.createElement("div");
@@ -35,12 +35,3 @@ const addRemoveListener = (btnRemove, cardID) => {
         taskHandler.removeTask(cardID);
     });
 };
-
-
-
-// Exporting:
-const card = {
-    create
-};
-
-export default card;

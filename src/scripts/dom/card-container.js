@@ -1,5 +1,5 @@
 // Imports:
-import taskHandler from "../core/taskHandler.js";
+import { taskHandler } from "../core/taskHandler.js";
 
 
 
