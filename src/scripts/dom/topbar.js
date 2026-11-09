@@ -7,7 +7,7 @@ import modalNewTask from "./modals/new-task.js";
 // Main:
 const renderFunction = () => {
     topbar.ref.classList.add("topbar");
-    createHeader("TASK MANAGER");
+    createHeader("Planner App");
     createButtons();
 };
 

@@ -7,9 +7,27 @@ import taskHandler from "../core/taskHandler.js";
 const renderFunction = () => {
     cardContainer.innerElements = [];
     cardContainer.ref.innerHTML = "";
-    taskHandler.cards.forEach(task => {
-        pushElement(task);
-    });
+    if (taskHandler.cards.length === 0) {
+        renderCardPlaceholder();
+    } else {
+        taskHandler.cards.forEach(task => {
+            pushElement(task);
+        });
+    }
+};
+
+const renderCardPlaceholder = () => {
+    pushElement(placeholder);
+};
+
+const initializeCardPlaceholder = () => {
+    const cardPlaceholderDiv = document.createElement("div");
+    const cardPlaceholder = document.createElement("h2");
+    cardPlaceholder.textContent = "Start by adding a new Task and enjoy the Planner App.";
+    cardPlaceholderDiv.classList.add("card-placeholder");
+    cardPlaceholderDiv.classList.add("rotating-border");
+    cardPlaceholderDiv.append(cardPlaceholder);
+    return cardPlaceholderDiv;
 };
 
 const pushElement = (element) => {
@@ -29,5 +47,6 @@ const cardContainer = {
 };
 
 cardContainer.ref.classList.add("card-container");
+const placeholder = initializeCardPlaceholder();
 
 export default cardContainer;

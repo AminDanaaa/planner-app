@@ -110,7 +110,7 @@ body {
     background-color: var(--cloud-grey);
     box-shadow: 8px 10px 16px -8px rgba(0, 0, 0, 0.6);
     min-height: 250px;
-    border-radius: 20px;
+    border-radius: 1.3rem;
     box-sizing: border-box;
     
     box-shadow:
@@ -374,6 +374,80 @@ textarea:focus {
     color: var(--cloud-grey);
     transform: translateY(-1px);
 }
+
+.card-container > .card-placeholder {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem;
+}
+
+.card-container > .card-placeholder > h2 {
+    color: var(--neu-dark);
+    text-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.9),
+        0 -1px 0 rgba(0, 0, 0, 0.2),
+        0 3px 4px rgba(0, 0, 0, 0.06);
+}
+
+
+
+/* Placeholder animated border */
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.rotating-border {
+    --border-width: 2px;
+    --radius: 1.3rem;
+
+    position: relative;
+    isolation: isolate;
+    border-radius: var(--radius);
+    background: #0f0f14;
+    padding: 2rem;
+    color: #fff;
+}
+
+.rotating-border::before {
+    content: "";
+    position: absolute;
+    inset: calc(var(--border-width) * -1);
+    z-index: 1;
+    pointer-events: none;
+    border-radius: calc(var(--radius) + var(--border-width));
+    padding: var(--border-width);
+    background: conic-gradient(
+        from var(--angle),
+        transparent,
+        var(--electric-violet),
+        transparent,
+        var(--electric-violet),
+        transparent
+    );
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    to { --angle: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rotating-border::before { animation: none; }
+}
+
+/* Placeholder animated border */
+
+
 
 @media (orientation: landscape) {
     .main-container {
