@@ -293,6 +293,17 @@ form {
     user-select: none;
 }
 
+input[type="date"] {
+    color-scheme: light;
+    width: 100%;
+    box-sizing: border-box;
+
+    background-color: white !important;
+    color: var(--jet-black);
+
+    appearance: none;
+}
+
 textarea {
     user-select: none;
     border-style: none;
