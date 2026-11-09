@@ -6,6 +6,15 @@ class Task {
         this.dueDate = dueDate;
         this.description = description;
     }
+
+    toJSON() {
+        return {
+            title: this.title,
+            priority: this.priority,
+            dueDate: this.dueDate,
+            description: this.description,
+        };
+    }
 }
 
 export default Task;
