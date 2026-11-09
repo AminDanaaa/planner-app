@@ -101,7 +101,7 @@ body {
     margin-inline: 10px;
     margin-block: 24px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 24px;
 }
 
@@ -110,6 +110,7 @@ body {
     background-color: var(--cloud-grey);
     box-shadow: 8px 10px 16px -8px rgba(0, 0, 0, 0.6);
     min-height: 250px;
+    min-width: 0;
     border-radius: 1.3rem;
     box-sizing: border-box;
     
