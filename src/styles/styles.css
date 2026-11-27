@@ -34,7 +34,9 @@ body {
 }
 
 .topbar {
-    background-color: var(--jet-black);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     height: 100px;
     padding-inline: 30px;
     margin-inline: 10px;
@@ -45,6 +47,33 @@ body {
     align-items: center;
     transition-duration: 0.5s;
     z-index: 100;
+    background:
+    radial-gradient(
+        circle at 65% 20%,
+        rgba(100, 120, 180, 0.12),
+        transparent 45%
+    ),
+    linear-gradient(
+        175deg,
+        #101116,
+        #171923
+    );
+}
+
+.topbar::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    pointer-events: none;
+
+    opacity: 0.12;
+
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+
+    background-repeat: repeat;
 }
 
 .topbar > h1 {
@@ -52,6 +81,11 @@ body {
     color: var(--cloud-grey);
     font-weight: bolder;
     font-size: 26px;
+    transform: translateY(-2px);
+
+    text-shadow:
+        0 0 8px rgba(146, 106, 255, 0.9),
+        0 0 24px rgba(146, 106, 255, 0.7);
 }
 
 .topbar > button {
@@ -61,11 +95,14 @@ body {
     font-weight: bold;
     font-size: 0.9rem;
     color: var(--cloud-grey);
-    background-color: var(--electric-violet);
-    border: 1px solid var(--electric-violet-light);
-    border-radius: 10px;
-    padding: 10px;
-    padding-inline: 18px;
+    background-color: rgba(255, 255, 255, 0.14);;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+    padding: 12px;
+    padding-inline: 28px;
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 
     box-shadow:
         0 0 0 0 rgba(123, 77, 255, 0),
@@ -84,8 +121,9 @@ body {
 
 .topbar > button:hover,
 .topbar > button:focus-visible {
-    background-color: var(--electric-violet-light);
-    border-color: rgb(178, 148, 255);
+    background-color: rgba(146, 106, 255, 0.4);
+    border-color: rgba(178, 148, 255, 0.25);
+    color: rgb(214, 198, 255);
     outline: none;
 
     box-shadow:
@@ -412,7 +450,7 @@ textarea:focus {
 }
 
 .rotating-border {
-    --border-width: 2px;
+    --border-width: 1px;
     --radius: 1.3rem;
 
     position: relative;
@@ -439,6 +477,9 @@ textarea:focus {
         var(--electric-violet),
         transparent
     );
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
     -webkit-mask:
         linear-gradient(#000 0 0) content-box,
         linear-gradient(#000 0 0);
